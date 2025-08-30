@@ -3,9 +3,6 @@ chat 聊天
 
 */
 const DEEPSEEK_CHAT_API_URL = 'https://api.deepseek.com/chat/completions'
-const QWEN_CHAT_API_URL = 'https://dashscope.aliyuncs.com/api/v1/services/aigc/text-generation/generation'
-const PROXY_DEEPSEEK_API_URL = 'http://localhost:3001/api/deepseek/chat'
-const PROXY_QWEN_API_URL = '/api/qwen'
 export const chat = async (messages,
     api_url = DEEPSEEK_CHAT_API_URL,
     api_key = import.meta.env.VITE_DEEPSEEK_API_KEY,
