@@ -1,5 +1,16 @@
 import Mock from 'mockjs';
 
+// Setup production mock server
+export function setupProdMockServer() {
+  if (typeof window !== 'undefined') {
+    // Only run in browser environment
+    const mockData = mockConfig;
+    mockData.forEach(({ url, method, response }) => {
+      Mock.mock(new RegExp(url.replace(/\/:/g, '/\\w+')), method, response);
+    });
+  }
+}
+
 const getImages = (page, pageSize = 10) => {
     return Array.from({ length: pageSize }, (_, i) => ({
         // 索引唯一
@@ -9,7 +20,7 @@ const getImages = (page, pageSize = 10) => {
 
     }))
 }
-export default [
+const mockConfig = [
     {
         url: '/api/tweets',
         method: 'get',
@@ -139,3 +150,5 @@ export default [
         }
     },
 ]
+
+export default mockConfig;
