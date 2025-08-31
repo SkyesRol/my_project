@@ -46,7 +46,7 @@ const useChatStore = create(
                     // 从localStorage加载该会话的消息
                     const savedMessages = localStorage.getItem(`chat_messages_${conversationId}`)
                     const messages = savedMessages ? JSON.parse(savedMessages) : []
-                    
+
                     // 确保所有加载的消息都不处于流式状态
                     const normalizedMessages = messages.map(msg => ({
                         ...msg,
@@ -197,7 +197,7 @@ const useChatStore = create(
                                 isStreaming: false
                             }
                             set({ messages: updatedMessages })
-                            
+
                             // 保存更新后的消息到 localStorage
                             const { activeConversationId } = get()
                             if (activeConversationId) {
@@ -223,7 +223,7 @@ const useChatStore = create(
                             isStreaming: false
                         }
                         set({ messages: updatedMessages })
-                        
+
                         // 保存更新后的消息到 localStorage
                         const { activeConversationId } = get()
                         if (activeConversationId) {

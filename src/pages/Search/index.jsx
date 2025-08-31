@@ -29,10 +29,10 @@ const Search = () => {
     // 反复生成 useCallback
     const [query, setQuery] = useState('');
     const { suggestList, setSuggestList, hotList, setHotList, isHotListLoading, isSuggestListLoading } = useSearchStore()
-
+    useTitle('Search')
     useEffect(() => {
         setHotList()
-        useTitle('Search')
+
     }, [])
 
     const handleQuery = (query) => {

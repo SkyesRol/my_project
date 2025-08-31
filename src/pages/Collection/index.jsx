@@ -7,8 +7,8 @@ import NavBar from '@/components/NavBar';
 import useTitle from '@/hooks/useTitle'
 const Collection = () => {
     const { images, loading, fetchMore } = useImageStore();
+    useTitle('Tiktok');
     useEffect(() => {
-        useTitle('Tiktok')
         fetchMore();
     }, [])
     return (

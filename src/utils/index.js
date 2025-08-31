@@ -7,9 +7,7 @@ export const debounce = (fn, delay) => {
             clearTimeout(timer);
         }
         timer = setTimeout(() => {
-            fn.id = setTimeout(() => {
-                fn(...args);
-            }, delay)
+            fn(...args);
         }, delay)
     }
 }

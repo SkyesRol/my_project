@@ -13,7 +13,7 @@ import MainLayout from '@/components/MainLayout'
 import BlankLayout from '@/components/BlankLayout'
 import Loading from '@/components/Loading'
 import Toast from '@/components/Toast'
-
+import ProtectedRoute from '@/components/ProtectedRoute'
 const Home = lazy(() => import('@/pages/Home'))
 const Search = lazy(() => import('@/pages/Search'))
 const Account = lazy(() => import('@/pages/Account'))
@@ -22,6 +22,7 @@ const Login = lazy(() => import('@/pages/Login'))
 const Detail = lazy(() => import('@/pages/Detail'))
 const Coze = lazy(() => import('@/pages/Coze'))
 const Chat = lazy(() => import('@/pages/Chat'))
+
 function App() {
   // 自定义 Tabbar 主题变量
   const themeVars = {
@@ -53,7 +54,11 @@ function App() {
             <Route path='/home' element={<Home />} />
             <Route path='/collection' element={<Collection />} />
             <Route path='/chat' element={<Chat />} />
-            <Route path='/account' element={<Account />} />
+            <Route path='/account' element={
+              <ProtectedRoute>
+                <Account />
+              </ProtectedRoute>
+            } />
           </Route>
         </Routes>
         {/* 空的Layout */}
@@ -61,7 +66,7 @@ function App() {
           <Route element={<BlankLayout />}>
             <Route path='/search' element={<Search />} />
             <Route path='/detail/:id' element={<Detail />} />
-            <Route path='/login' element={<Login />} />
+            <Route path='/Login' element={<Login />} />
           </Route>
           <Route path='/coze' element={<Coze />} />
 

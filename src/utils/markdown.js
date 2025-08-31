@@ -12,7 +12,7 @@ marked.setOptions({
 // 解析 Markdown 文本为 HTML
 export const parseMarkdown = (text) => {
   if (!text) return ''
-  
+
   try {
     return marked(text)
   } catch (error) {
@@ -21,20 +21,12 @@ export const parseMarkdown = (text) => {
   }
 }
 
-// 简单的加粗解析器（作为备选方案）
-export const parseSimpleBold = (text) => {
-  if (!text) return ''
-  
-  // 将 **text** 或 __text__ 转换为 <strong>text</strong>
-  return text
-    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-    .replace(/__(.*?)__/g, '<strong>$1</strong>')
-}
+
 
 // 检查文本是否包含 Markdown 格式
 export const hasMarkdown = (text) => {
   if (!text) return false
-  
+
   // 检查是否包含常见的 Markdown 语法
   const markdownPatterns = [
     /\*\*.*?\*\*/, // 加粗 **text**
@@ -46,6 +38,6 @@ export const hasMarkdown = (text) => {
     /^\* /, // 列表 * item
     /^\d+\. /, // 有序列表 1. item
   ]
-  
+
   return markdownPatterns.some(pattern => pattern.test(text))
 }

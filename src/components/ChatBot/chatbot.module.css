@@ -3,7 +3,7 @@
   flex-direction: column;
   height: 100%;
   background: #f5f5f5;
-  max-width: 100vw;
+  max-width: 100%;
   overflow: hidden;
   position: relative;
 }
@@ -12,7 +12,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 3vw 4vw;
+  padding: 12px 16px;
   background: #fff;
   border-bottom: 1px solid #eee;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -28,20 +28,20 @@
 }
 
 .robotIcon {
-  margin-right: 2vw;
+  margin-right: 8px;
   color: #1890ff;
   font-size: clamp(18px, 4vw, 22px);
 }
 
 .actions {
   display: flex;
-  gap: 2vw;
+  gap: 8px;
 }
 
 .messagesContainer {
   flex: 1;
   overflow-y: auto;
-  padding: 4vw;
+  padding: 16px;
   background: #f5f5f5;
   min-height: 0;
 }
@@ -54,20 +54,20 @@
   height: 100%;
   color: #999;
   text-align: center;
-  padding: 8vw;
+  padding: 32px;
 }
 
 .emptyIcon {
   font-size: clamp(40px, 12vw, 60px);
-  margin-bottom: 4vw;
+  margin-bottom: 16px;
   color: #ccc;
 }
 
 .messageItem {
   display: flex;
-  margin-bottom: 4vw;
+  margin-bottom: 16px;
   animation: fadeIn 0.3s ease-in;
-  padding: 0 2vw;
+  padding: 0 8px;
 }
 
 .messageItem.user {
@@ -81,7 +81,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 3vw;
+  margin: 0 12px;
   flex-shrink: 0;
 }
 
@@ -100,7 +100,7 @@
 }
 
 .messageContent {
-  max-width: min(70%, 80vw);
+  max-width: min(70%, 300px);
   display: flex;
   flex-direction: column;
 }
@@ -131,19 +131,19 @@
   border-bottom-left-radius: clamp(4px, 1vw, 6px);
 }
 
-.errorMessage {
-  background: #fff2f0 !important;
-  border-color: #ffccc7 !important;
-  color: #ff4d4f !important;
+.messageItem .messageBubble.errorMessage {
+  background: #fff2f0;
+  border-color: #ffccc7;
+  color: #ff4d4f;
 }
 
 .messageTime {
   font-size: clamp(10px, 2.5vw, 12px);
   color: #999;
-  margin-top: 1vw;
+  margin-top: 4px;
   display: flex;
   align-items: center;
-  gap: 2vw;
+  gap: 8px;
 }
 
 .user .messageTime {
@@ -152,25 +152,25 @@
 
 .modelTag {
   background: #f0f0f0;
-  padding: 1vw 2vw;
+  padding: 4px 8px;
   border-radius: clamp(8px, 2vw, 12px);
   font-size: clamp(8px, 2vw, 10px);
 }
 
 .loadingIcon {
-  margin-right: 2vw;
+  margin-right: 8px;
 }
 
 .errorContainer {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 3vw;
-  padding: 4vw;
+  gap: 12px;
+  padding: 16px;
   background: #fff2f0;
   border: 1px solid #ffccc7;
   border-radius: clamp(8px, 2vw, 12px);
-  margin: 4vw 0;
+  margin: 16px 0;
 }
 
 .errorText {
@@ -180,7 +180,7 @@
 }
 
 .inputContainer {
-  padding: 4vw;
+  padding: 16px;
   background: #fff;
   border-top: 1px solid #eee;
   flex-shrink: 0;
@@ -188,7 +188,7 @@
 
 .inputWrapper {
   display: flex;
-  gap: 3vw;
+  gap: 12px;
   align-items: flex-end;
 }
 
@@ -215,16 +215,16 @@
   align-items: center;
   justify-content: center;
   padding: 0;
-  margin-bottom: 1vw;
+  margin-bottom: 4px;
   font-size: clamp(18px, 4vw, 22px);
 }
 
 .modelSelector {
-  padding: 6vw;
+  padding: 24px;
 }
 
 .modelSelector h3 {
-  margin: 0 0 5vw 0;
+  margin: 0 0 20px 0;
   text-align: center;
   color: #333;
   font-size: clamp(18px, 4.5vw, 22px);
@@ -233,14 +233,14 @@
 .modelOptions {
   display: flex;
   flex-direction: column;
-  gap: 3vw;
+  gap: 12px;
 }
 
 .modelOption {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 4vw;
+  padding: 16px;
   border: 2px solid #f0f0f0;
   border-radius: clamp(12px, 3vw, 16px);
   cursor: pointer;
@@ -259,7 +259,7 @@
 }
 
 .modelInfo h4 {
-  margin: 0 0 1vw 0;
+  margin: 0 0 4px 0;
   color: #333;
   font-size: clamp(16px, 4vw, 18px);
 }
@@ -291,11 +291,11 @@
 /* 响应式设计 */
 @media (max-width: 768px) {
   .messageContent {
-    max-width: min(85%, 90vw);
+    max-width: min(85%, 320px);
   }
 
   .header {
-    padding: 4vw 5vw;
+    padding: 16px 20px;
   }
 
   .title {
@@ -303,11 +303,11 @@
   }
 
   .messagesContainer {
-    padding: 5vw;
+    padding: 20px;
   }
 
   .inputContainer {
-    padding: 5vw;
+    padding: 20px;
   }
 
   .sendButton {
@@ -332,23 +332,23 @@
 
 @media (max-width: 480px) {
   .header {
-    padding: 5vw 6vw;
+    padding: 20px 24px;
   }
 
   .messagesContainer {
-    padding: 6vw;
+    padding: 24px;
   }
 
   .inputContainer {
-    padding: 6vw;
+    padding: 24px;
   }
 
   .messageItem {
-    margin-bottom: 5vw;
+    margin-bottom: 20px;
   }
 
   .modelSelector {
-    padding: 8vw;
+    padding: 32px;
   }
 }
 

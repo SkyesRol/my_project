@@ -41,9 +41,7 @@ const Account = () => {
         { icon: <UserO />, text: '我的' }
     ];
 
-    useEffect(() => {
-        useTitle('My account')
-    }, [])
+    useTitle('My account');
     const [userInfo, setUserInfo] = useState({
         nickname: '奶龙',
         slogan: '我是奶龙',
