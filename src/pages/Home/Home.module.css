@@ -1,0 +1,96 @@
+.homeContainer {
+    height: 100vh;
+    background-color: #000000;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Header styles moved to NavBar component */
+
+.pullRefresh {
+    height: calc(100vh - 53px);
+    overflow-y: auto;
+}
+
+.tweetList {
+    background-color: #000000;
+}
+
+.composeButton {
+    position: fixed;
+    bottom: 80px;
+    right: 16px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: #1d9bf0;
+    border: none;
+    box-shadow: 0 4px 16px rgba(29, 155, 240, 0.3);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.composeButton:hover {
+    background-color: #1a8cd8;
+    transform: scale(1.05);
+}
+
+.composeButton:active {
+    transform: scale(0.95);
+}
+
+/* 滚动条样式 */
+.pullRefresh::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
+
+/* 响应式设计 */
+@media (max-width: 480px) {
+    .header {
+        padding: 0 12px;
+    }
+
+    .composeButton {
+        bottom: 100px;
+        right: 12px;
+        width: 52px;
+        height: 52px;
+    }
+}
+
+/* 加载状态 */
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: #71767b;
+}
+
+/* 空状态 */
+.empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    color: #71767b;
+    text-align: center;
+}
+
+.empty h3 {
+    margin: 16px 0 8px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.empty p {
+    font-size: 15px;
+    line-height: 20px;
+    margin: 0;
+}

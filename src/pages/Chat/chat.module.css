@@ -1,0 +1,228 @@
+.chatPage {
+  height: 100vh;
+  /* 使用视口高度确保铺满整个页面 */
+  display: flex;
+  flex-direction: column;
+  background: #f5f5f5;
+  overflow: hidden;
+}
+
+.chatMain {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.chatHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  /* 使用原始内边距，让postcss转换 */
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  height: 80px;
+
+  /* 使用原始高度，让postcss转换 */
+}
+
+.sidebarToggle {
+  background: #f0f0f0;
+  border: none;
+  color: #666;
+  padding: 6px 10px;
+  /* 使用原始内边距，让postcss转换 */
+}
+
+.currentChat {
+  flex: 1;
+  text-align: center;
+  font-weight: 500;
+  color: #333;
+  margin: 0 16px;
+  /* 使用原始间距，让postcss转换 */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  /* 移除固定字体大小，使用默认值 */
+  /* 设置字体大小 */
+}
+
+.noChat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.noChatIcon {
+  font-size: 64px;
+  margin-bottom: 20px;
+  color: #ddd;
+}
+
+.noChat p {
+  margin: 0 0 20px 0;
+  font-size: 16px;
+}
+
+.sidebar {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+}
+
+.sidebarHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-bottom: 1px solid #eee;
+  background: #fafafa;
+}
+
+.sidebarHeader h3 {
+  margin: 0;
+  color: #333;
+  font-size: 18px;
+}
+
+.conversationList {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.emptyConversations {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  color: #999;
+  text-align: center;
+  padding: 20px;
+}
+
+.emptyConversations p {
+  margin: 0 0 16px 0;
+}
+
+.conversationWrapper {
+  position: relative;
+}
+
+.conversationItem {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  border-bottom: 1px solid #f0f0f0;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  position: relative;
+}
+
+.conversationItem:hover {
+  background: #f8f8f8;
+}
+
+.conversationItem.active {
+  background: #e6f7ff;
+  border-left: 3px solid #1890ff;
+}
+
+.conversationInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.conversationTitle {
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.conversationMeta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: #999;
+}
+
+.messageCount {
+  background: #f0f0f0;
+  padding: 2px 6px;
+  border-radius: 10px;
+}
+
+.conversationTime {
+  margin-left: 8px;
+}
+
+.activeIndicator {
+  width: 8px;
+  height: 8px;
+  background: #1890ff;
+  border-radius: 50%;
+  margin-left: 12px;
+  flex-shrink: 0;
+}
+
+/* 滑动删除样式 */
+.conversationItem .rv-swipe-cell__wrapper {
+  background: #fff;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .chatHeader {
+    padding: 8px 12px;
+  }
+
+  .currentChat {
+    font-size: 14px;
+    margin: 0 12px;
+  }
+
+  .sidebarHeader {
+    padding: 12px;
+  }
+
+  .sidebarHeader h3 {
+    font-size: 16px;
+  }
+
+  .conversationItem {
+    padding: 12px;
+  }
+
+  .conversationTitle {
+    font-size: 14px;
+  }
+}
+
+/* 动画效果 */
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+.sidebar {
+  animation: slideInLeft 0.3s ease-out;
+}

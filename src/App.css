@@ -1,0 +1,54 @@
+/* App.css编写通用样式 */
+/* 全局暗黑主题样式 */
+body {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+#root {
+  background-color: #000000;
+  min-height: 100vh;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.h-screen {
+  height: 100vh;
+}
+
+.h-all {
+  height: 100%;
+}
+
+.fixed-loading {
+  position: fixed;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+}
+
+.mt2 {
+  margin-top: 8px;
+}
+
+.mt3 {
+  margin-top: 12px;
+}
+
+.ml4 {
+  margin-left: 16px;
+}

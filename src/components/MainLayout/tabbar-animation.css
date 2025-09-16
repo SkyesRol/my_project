@@ -1,0 +1,87 @@
+/* Tabbar 过渡动画样式 */
+.rv-tabbar {
+  transition: all 0.3s ease-in-out;
+}
+
+.rv-tabbar-item {
+  transition: all 0.3s ease-in-out;
+  position: relative;
+}
+
+.rv-tabbar-item__icon {
+  transition: all 0.3s ease-in-out;
+  transform-origin: center;
+}
+
+.rv-tabbar-item__text {
+  transition: all 0.3s ease-in-out;
+}
+
+/* 激活状态的动画效果 */
+.rv-tabbar-item--active .rv-tabbar-item__icon {
+  transform: scale(1.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.rv-tabbar-item--active .rv-tabbar-item__text {
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 悬停效果 */
+.rv-tabbar-item:hover {
+  transform: translateY(-1px);
+  transition: all 0.2s ease-in-out;
+}
+
+/* 点击效果 */
+.rv-tabbar-item:active {
+  transform: translateY(0px) scale(0.98);
+  transition: all 0.1s ease-in-out;
+}
+
+/* 图标旋转动画 */
+@keyframes iconPulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+.rv-tabbar-item--active .rv-tabbar-item__icon {
+  animation: iconPulse 0.3s ease-in-out;
+}
+
+/* 文字淡入效果 */
+.rv-tabbar-item__text {
+  opacity: 0.7;
+  transition: opacity 0.3s ease-in-out, font-weight 0.3s ease-in-out;
+}
+
+.rv-tabbar-item--active .rv-tabbar-item__text {
+  opacity: 1;
+}
+
+/* 底部指示器动画 */
+.rv-tabbar-item::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: #ffffff;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateX(-50%);
+}
+
+.rv-tabbar-item--active::after {
+  width: 20px;
+}
